@@ -1,0 +1,22 @@
+<div class="slider">
+	<div class="main">
+		<div class="pages">
+			<div class="page">
+				<div class="scrollable">
+					<div class="items">
+					<{foreach item=item from=$block.items}>
+						<div class="item">
+							<img src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
+						</div>
+					<{/foreach}>
+					</div>
+				</div>
+				<div class="navi">
+				<{foreach item=item from=$block.items}>
+					<a title="<{$item.item_title}>" class="tooltip<{if $item.item_default == 1}> active<{/if}>" href="#<{$item.item_id}>"></a>
+				<{/foreach}>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,91 @@
+.slider {
+	width: 960px;
+	height: 295px;
+	margin: 0 auto;	
+	padding: 0;
+	background-color: #fff;
+}	
+
+.slider .main {
+	width: 960px;
+	height: 270px;
+	margin: 0;	
+	padding: 0;
+	background-color: #fff;
+	border-color: #fff;
+}
+	
+.slider .pages {
+	position: absolute;
+	margin: 0;	
+	padding: 0;
+	background-color: #fff;
+}
+
+.slider .page {
+	width: 960px;
+	height: 275px;
+	margin: 0;	
+	padding: 0;
+	background-color: #fff;
+}
+	
+.slider .scrollable {
+	position: relative;
+	overflow: hidden;
+	width: 960px;
+	height: 275px;
+	background-color: #fff;
+}
+	
+.slider .scrollable .items {
+	width: 20000em;
+	position: absolute;
+	clear: both;
+	background-color: #fff;
+}
+	
+.slider .item {
+	float: right;
+	cursor: pointer;
+	width: 960px;
+	height: 275px;
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+}
+
+.slider .item img {
+	width: 960px;
+	height: 275px;
+}
+
+.slider .navi {
+	width: 960px;
+	height: 20px;
+	text-align: center;
+	margin: 5px auto 0 auto;
+	padding-right: 420px;
+}
+
+.slider .navi a {
+	width: 8px;
+	height: 8px;
+	margin: 3px;
+	background: #525572;
+	display: block;
+	float: right;
+	font-size: 1px;
+	text-align: center;
+	border-radius: 6px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 6px;
+}
+
+.slider .navi a: hover {
+	background: #000;
+}
+
+.slider .navi a.active {
+	background: #000;
+} 	

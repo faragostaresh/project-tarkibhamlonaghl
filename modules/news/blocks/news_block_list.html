@@ -1,0 +1,13 @@
+<div class="itemBlock">
+	<{foreach item=content from=$block.contents}>
+	<div class="item">
+		<{if $block.img && $content.story_img}>
+		<img class="right" width="48" height="50" src="<{$block.thumburl}><{$content.story_img}>" alt="<{$content.title}>" />
+		<{/if}>
+		<h3><{if $content.story_important}><span class="red bold"><{$smarty.const._NEWS_MB_IMPORTANT}></span><{/if}><a title="<{$content.title}>" href="<{$content.url}>"><{$content.title}></a></h3></div>
+		<div class="itemBlockInfo"><{$smarty.const._NEWS_MB_DATE}> :<{$content.date}></div>
+		<div class="clear"></div>
+	</div>
+	<{/foreach}>
+</div>
+<div class="clear"></div>

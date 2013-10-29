@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<{assign var=theme_top_order value=clr}>
+<{assign var=theme_bottom_order value=clr}>
+<{assign var=theme_name value=$xoTheme->folderName}>
+<{assign var=theme_name value=$xoTheme->folderName|cat:'/xotpl'}>
+<title><{if $xoops_pagetitle !=''}><{$xoops_pagetitle}> : <{/if}><{$xoops_sitename}></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<{if $url}>
+    <meta http-equiv="Refresh" content="<{$time}>; url=<{$url}>" />
+<{/if}>
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl xoops.css}>" />
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl css/layout-soup.css}>" />
+<link rel="stylesheet" type="text/css" media="all" title="Color" href="<{xoImgUrl css/style.css}>" />
+<{php}>
+	global $xoTheme; 
+	$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
+	$xoTheme->addScript("js/radius.js");
+	$xoTheme->addScript("js/scrollable.js");
+	$xoTheme->addScript("js/setting.js");
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true)); 
+<{/php}>
+<{$xoops_module_header}>
+</head>
+<body id="<{$xoops_dirname}>" class="<{$xoops_langcode}>">
+<{if $xoBlocks.canvas_left and $xoBlocks.canvas_right}><{assign var=columns_layout value='threecolumns-layout'}>
+<{elseif $xoBlocks.canvas_left}><{assign var=columns_layout value='leftcolumn-layout'}>
+<{elseif $xoBlocks.canvas_right}><{assign var=columns_layout value='rightcolumn-layout'}>
+<{/if}>
+<div id="xo-wrapper" class="<{$xoops_dirname}> main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a title="<{$xoops_sitename}>" href="<{xoAppUrl /}>">شرکت <span>ترکیب حمل و نقل</span></a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <{$xoops_menu_1}>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_resize">
+      <{block id=30}>
+      <div class="clr"></div>
+    <div id="xo-canvas"<{if $columns_layout}> class="<{$columns_layout}>"<{/if}>>
+        <div id="xo-canvas-content">
+            <table id="xo-canvas-columns" cellspacing="0">
+            <tr>
+                <{if $xoBlocks.canvas_left}>
+                    <{includeq file="$theme_name/blockszone.html" blocks=$xoBlocks.canvas_left
+                        zoneClass='xo-canvas-column' zoneId='xo-canvas-leftcolumn' zoneTag='td'
+                    }>
+                <{/if}>
+                <td id="xo-page">
+                    <{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+                        <div class="xo-blockszone xo-<{$theme_top_order}>pageblocks" id="xo-page-topblocks">
+                            <{includeq file="$theme_name/centerblocks.html" topbottom=top lcr=$theme_top_order|substr:0:1}>
+                            <{includeq file="$theme_name/centerblocks.html" topbottom=top lcr=$theme_top_order|substr:1:1}>
+                            <{includeq file="$theme_name/centerblocks.html" topbottom=top lcr=$theme_top_order|substr:2:1}>
+                        </div>
+                    <{/if}>
+                    <{if $xoops_contents && ($xoops_contents != ' ') }><div id="xo-content"><{$xoops_contents}></div><{/if}>
+                    <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+                        <div class="xo-blockszone xo-<{$theme_bottom_order}>pageblocks" id="xo-page-bottomblocks">
+                            <{includeq file="$theme_name/centerblocks.html" topbottom=bottom lcr=$theme_bottom_order|substr:0:1}>
+                            <{includeq file="$theme_name/centerblocks.html" topbottom=bottom lcr=$theme_bottom_order|substr:1:1}>
+                            <{includeq file="$theme_name/centerblocks.html" topbottom=bottom lcr=$theme_bottom_order|substr:2:1}>
+                        </div>
+                    <{/if}>
+                </td>
+                <{if $xoBlocks.canvas_right}>
+                    <{includeq file="$theme_name/blockszone.html" blocks=$xoBlocks.canvas_right
+                        zoneClass='xo-canvas-column' zoneId='xo-canvas-rightcolumn' zoneTag='td'
+                    }>
+                <{/if}>
+            </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+    <div class="clr"></div>	
+      <div class="col c1">
+        <h2><span>نقشه خطوط ریلی</span></h2>
+        <div class="center">
+        	<a title="دریافت نقشه" href="<{xoAppUrl uploads/files/map.pdf}>">
+        		<img width="220" src="<{xoAppUrl uploads/images/img522dbd1420d06.jpg}>" alt="دریافت نقشه" />
+        	</a>
+        </div>
+      </div>
+      <div class="col c2">
+        <h2><span>درباره ما</span></h2>
+        <p>شرکت ترکیب حمل ونقل وابسته به موسسه صندوق پس انداز کارکنان راه آهن جمهوری اسلامی ایران در سال 1374 تأسیس و فعالیت خود را در زمینه حمل ونقل ریلی و جاده ای و ترکیبی کالا آغاز نمود. این شرکت با استفاده از امکانات و درسایه تجربیات و توانمندیهای خود در حال حاضر کلیه خدمات حمل و نقل اعم از ریلی، جاده ای و همچنین واردات و صادرات از قلمرو جمهوری اسلامی ایران به کشورهای آسیای میانه و حمل ونقل ترکیبی، از کلیه بنادر، باراندازها، مراکز تولیدی و اقتصادی ایران را انجام می دهد.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>تماس با ما</span></h2>
+        <div class="pad2"><strong>آدرس</strong> :  تهران، بلوارکشاورز، نرسیده به بیمارستان امام خمینی، پلاک 131</div>
+        <div class="pad2"><strong>دورنگار</strong> : ۶۶۹۱۳۹۲۴</div>
+        <div class="pad2"><strong>تلفن</strong> : ۲۹-۶۶۹۱۳۹۲۷</div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">حقوق مطالب ، تصاویر و طرح قالب برای شرکت <a title="ترکیب حمل و نقل" href="<{xoAppUrl /}>">ترکیب حمل و نقل</a> محفوظ است . <span>طراحی و توسعه <a target="_blank" title="فراگسترش" href="http://www.faragostaresh.com" rel="external">فراگسترش</a></span>
+      </p>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
