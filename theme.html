@@ -29,6 +29,16 @@
 	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true)); 
 <{/php}>
 <{$xoops_module_header}>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46059428-1', 'tarkibhamlonaghl.ir');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body id="<{$xoops_dirname}>" class="<{$xoops_langcode}>">
 <{if $xoBlocks.canvas_left and $xoBlocks.canvas_right}><{assign var=columns_layout value='threecolumns-layout'}>
@@ -39,7 +49,7 @@
 
   <div class="header">
     <div class="header_resize">
-      <div class="logo"><h1><a title="<{$xoops_sitename}>" href="<{xoAppUrl /}>">شرکت <span>ترکیب حمل و نقل</span></a></h1></div>
+      <div class="logo"><h1><a title="ترکیب حمل و نقل" href="<{xoAppUrl /}>"><img src="<{xoImgUrl images/logo.png}>" alt="ترکیب حمل و نقل" /></a></h1></div>
       <div class="clr"></div>
       <div class="menu_nav">
         <{$xoops_menu_1}>
@@ -107,7 +117,7 @@
       </div>
       <div class="col c3">
         <h2><span>تماس با ما</span></h2>
-        <div class="pad2"><strong>آدرس</strong> :  تهران، بلوارکشاورز، نرسیده به بیمارستان امام خمینی، پلاک 131</div>
+        <div class="pad2"><strong>آدرس</strong> :  تهران، میدان توحید ، خیابان نصرت غربی ، بعد از خوش ، پلاک ۱۵۸</div>
         <div class="pad2"><strong>دورنگار</strong> : ۶۶۹۱۳۹۲۴</div>
         <div class="pad2"><strong>تلفن</strong> : ۲۹-۶۶۹۱۳۹۲۷</div>
       </div>
